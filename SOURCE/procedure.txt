@@ -1,0 +1,53 @@
+First Creat a simple maven file structure using the command:
+
+mvn archetype:generate -DgroupId=com.java_app
+   -DartifactId=TheJavaApp
+   -DarchetypeArtifactId=maven-archetype-quickstart
+   -DinteractiveMode=false
+
+Enter this command:
+------------------
+mvn archetype:generate -DgroupId=com.java_app    -DartifactId=TheJavaApp    -DarchetypeArtifactId=maven-archetype-quickstart    -DinteractiveMode=false
+
+The above creates maven structure
+==========================================================================================================
+Edit pom.xml
+
+add the following:
+
+<build>
+		<plugins>
+			<plugin>
+			<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+Then run the following command
+
+mvn package
+
+mvn clean install
+
+which gives the jar file in the target folder
+==========================================================================================================
+take screen shots
+==========================================================================================================
+wrote shell script to call the jar file stored in the same folder (which is copied from the folder named target)
+
+The scripts prints the content of the file passed as argument
+==========================================================================================================
+again, taken screen shotS
+==========================================================================================================
